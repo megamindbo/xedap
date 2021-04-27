@@ -1,0 +1,9 @@
+li.nav-item.active .nav-link {
+    color: #244fec !important;
+}
+td {
+    text-align: center;
+}
+th{
+    text-align: center;
+}
