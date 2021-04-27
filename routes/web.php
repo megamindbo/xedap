@@ -12,3 +12,9 @@
 */
 
 Route::get('/','FrontEnd\IndexController@index')->name('index');
+Route::get('/admin','BackEnd\IndexController@dashboard')->name('backend');
+Route::resource('product', 'BackEnd\ProductController');
+Route::resource('category', 'BackEnd\CategoryController');
+//Route::group(['middleware' => ['web']], function () {
+//    Route::get('lang/{lang}','LangController@changeLang')->name('lang');
+//});
