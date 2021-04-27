@@ -15,18 +15,17 @@ class CreateAccessoriesTable extends Migration
     {
         Schema::create('accessories', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('sku');
             $table->string('pin')->nullable();
-            $table->string('adapter')->nullable();
-            $table->string('board')->nullable();
-            $table->string('frames')->nullable();
-            $table->string('basket')->nullable();
-            $table->string('mirror')->nullable();
-            $table->string('key')->nullable();
-            $table->string('book_warranty')->nullable();
-            $table->string('tire')->nullable();
-            $table->string('headlight')->nullable();
-            $table->string('front_brake')->nullable();
-            $table->string('rear_brake')->nullable();
+            $table->string('sac_pin')->nullable();      // sạc pin
+            $table->string('ro_xe')->nullable();        // rổ xe
+            $table->string('guong_xe')->nullable();       //gương xe
+            $table->string('khoa')->nullable();
+            $table->string('so_bao_hanh')->nullable();
+            $table->string('lop_xe')->nullable();
+            $table->string('den_pha')->nullable();
+            $table->string('thang_truoc')->nullable();
+            $table->string('thang_sau')->nullable();
             $table->timestamps();
         });
     }

@@ -8,23 +8,21 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title ">{{__('messages.product.list') }}</h3>
+                    <h3 class="card-title ">Danh sách sản phẩm</h3>
                 </div>
                 <!-- /.card-header -->
                 <div class="card-body">
                     @include('messages.msg')
-                    <a name="" id="" class="btn btn-primary mb-2" href="{{ route('product.create') }}" role="button">{{__('messages.product.create') }}</a>
+                    <a name="" id="" class="btn btn-primary mb-2" href="{{ route('product.create') }}" role="button">Tạo sản phẩm mới</a>
                     <table id="tableProduct" class="table table-bordered">
                         <thead>
                         <tr>
-                            <th>{{__('messages.product.sku') }}</th>
-                            <th>{{__('messages.product.name') }}</th>
-                            <th>{{__('messages.product.label') }}</th>
-                            <th>{{__('messages.product.made') }}</th>
-                            <th style="width: 200px;">{{__('messages.product.description') }}</th>
-                            <th>{{__('messages.product.price') }}</th>
-                            <th>{{__('messages.product.quantity') }}</th>
-                            <th>{{__('messages.product.image') }}</th>
+                            <th>Sku</th>
+                            <th>Tên sản phẩm</th>
+                            <th>Mô tả</th>
+                            <th style="">Số lượng</th>
+                            <th>Đơn giá</th>
+                            <th>HÌnh ảnh</th>
                             <th style="width: 120px;">Action</th>
                         </tr>
                         </thead>
@@ -33,12 +31,9 @@
                             <tr>
                                 <td>{{$product->sku}}</td>
                                 <td>{{$product->ten_san_pham}}</td>
-                                <td>{{$product->hang_san_xuat}}</td>
-                                <td>{{$product->nhan_hieu}}</td>
-                                <td>{{$product->xuat_xu}}</td>
                                 <td>{{$product->mo_ta}}</td>
-                                <td>{{number_format($product->gia_san_pham, 0, '', ',')}} VNĐ</td>
                                 <td>{{$product->so_luong}}</td>
+                                <td>{{number_format($product->gia_san_pham, 0, '', ',')}} VNĐ</td>
                                 <td><img src="{{asset('img/frontend/product/all/'.$product->image)}}" alt="" style="width: 80px;height:80px;"></td>
                                 <td>
                                     <a class="btn btn-info btn-sm" href="{{route('product.edit', $product->id)}}">
@@ -59,7 +54,6 @@
                             </tr>
                         @endforeach
                     </table>
-{{--                    <div class="d-flex justify-content-center mt-3">{{ $products->links() }}</div>--}}
                 </div>
                 <!-- /.card-body -->
             </div>

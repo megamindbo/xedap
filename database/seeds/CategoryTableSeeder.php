@@ -13,39 +13,39 @@ class CategoryTableSeeder extends Seeder
     {
         $data =  [
             [
-                'name' => 'xe_van_dong_cho_be',//'Xe đạp điện',
+                'ten_the_loai' => 'xe_van_dong_cho_be',//'Xe đạp điện',
 
             ],
             [
-                'name' => 'xe_dap_tre_em',//'Xe máy điện',
+                'ten_the_loai' => 'xe_dap_tre_em',//'Xe máy điện',
 
             ],
             [
-                'name' => 'xe_dap_pho_thong',//'Xe máy 50cc',
+                'ten_the_loai' => 'xe_dap_pho_thong',//'Xe máy 50cc',
 
             ],
             [
-                'name' => 'xe_dap_the_thao',//'Xe ga 50cc',
+                'ten_the_loai' => 'xe_dap_the_thao',//'Xe ga 50cc',
 
             ],
             [
-                'name' => 'xe_dap_dua',//'Xe số 50cc',
+                'ten_the_loai' => 'xe_dap_dua',//'Xe số 50cc',
 
             ],
             [
-                'name' => 'xe_dap_gap',//'Xe đạp',
+                'ten_the_loai' => 'xe_dap_gap',//'Xe đạp',
 
             ],
             [
-                'name' => 'xe_dap_dien',//'Xe thanh lý',
+                'ten_the_loai' => 'xe_dap_dien',//'Xe thanh lý',
 
             ],
             [
-                'name' => 'xe_dap_khuyen_mai',//'Xe thanh lý',
+                'ten_the_loai' => 'xe_dap_khuyen_mai',//'Xe thanh lý',
 
             ],
             [
-                'name' => 'phu_tung',//'Phụ kiện',
+                'ten_the_loai' => 'phu_tung',//'Phụ kiện',
 
             ]
         ];

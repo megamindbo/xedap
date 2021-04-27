@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\BackEndProductCreateRequest;
 use Illuminate\Http\Request;
 use App\Model\Product;
+use App\Model\ProductDetails;
 use App\Model\Category;
 use DB;
 use Illuminate\Support\Facades\Log;
@@ -39,6 +40,7 @@ class ProductController extends Controller
     public function store(BackEndProductCreateRequest $request)
     {
         try {
+            DB::beginTransaction();
             if ($request->hasfile('image')){
                 $file = $request->file('image');
                 $extension = $file->getClientOriginalExtension(); // get image extension
@@ -47,15 +49,23 @@ class ProductController extends Controller
             }
             else
             {
-                return redirect()->back()->with('success','No image import');
+                return redirect()->back()->with('error','No image import');
             }
-            $data = $request->except('_token','image');
-            $data['image'] = $filename;
-            Product::create($data);
+            $dataProduct = $request->except('_token','image','nhan_hieu','xuat_xu',
+            'hang_san_xuat','khung','bao_hanh','giay_chung_nhan','kich_thuoc','lop_truoc','lop_sau',
+            'mau_sac','cong_suat','dong_co','van_toc','ac_quy','thoi_gian_sac','trong_luong','den_xe');
+            $dataProduct['image'] = $filename;
+            $dataProductDetails = $request->except('_token','image','ten_san_pham','sku','category_id','so_luong',
+            'slug','gia_san_pham','giam_gia','mo_ta');
+            Product::create($dataProduct);
+            ProductDetails::create($dataProductDetails);
+            DB::commit();
             return redirect()->route('product.index')->with('success','Tạo sản phẩm thành công');
         }catch (\Exception $exception)
         {
+            DB::rollBack();
             Log::info($exception->getMessage());
+            return redirect()->back()->with('error',$exception->getMessage());
         }
 
     }
