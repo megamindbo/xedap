@@ -29,13 +29,13 @@
                         @foreach ($categories as $category)
                             <tr>
                                 <td>{{$loop->index +1}}</td>
-                                <td>{{$category->name}}</td>
+                                <td>{{$category->ten_the_loai}}</td>
                                 <td style="align-items: center;">
-                                    <a class="btn btn-info btn-sm" href="{{route('category.edit', $category->id)}}">
-                                        <i class="fas fa-pencil-alt">
-                                        </i>
-                                        Edit
-                                    </a>
+{{--                                    <a class="btn btn-info btn-sm" href="{{route('category.edit', $category->id)}}">--}}
+{{--                                        <i class="fas fa-pencil-alt">--}}
+{{--                                        </i>--}}
+{{--                                        Edit--}}
+{{--                                    </a>--}}
                                 </td>
                             </tr>
                         @endforeach

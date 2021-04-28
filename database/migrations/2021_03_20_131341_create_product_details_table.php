@@ -16,6 +16,7 @@ class CreateProductDetailsTable extends Migration
         Schema::create('product_details', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('sku');
+            $table->unique('sku');
             $table->string('nhan_hieu');        //nhãn hiệu
             $table->string('xuat_xu')->nullable();          //xuất sứ
             $table->string('hang_san_xuat')->nullable();    //hãng sản xuất

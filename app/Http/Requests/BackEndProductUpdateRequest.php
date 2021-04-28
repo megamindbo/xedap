@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BackEndProductCreateRequest extends FormRequest
+class BackEndProductUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -28,7 +28,6 @@ class BackEndProductCreateRequest extends FormRequest
             'sku' => 'required',
             'so_luong' => 'required|integer|min:1',
             'gia_san_pham' => 'required|numeric|min:50000',
-            'image' => 'required|image:png,jpg,jpeg|max:10000',
             'nhan_hieu' => 'required'
         ];
     }
@@ -41,8 +40,6 @@ class BackEndProductCreateRequest extends FormRequest
         return [
             'ten_san_pham.required' => 'Tên sản phẩm bắt buộc nhập',
             'sku.required' => 'Nhập mã sku',
-            'image.required' => 'Hình ảnh bắt buộc nhập',
-            'image.image' => 'Hình ảnh bắt buộc phải là png, jpg,jpeg',
             'so_luong.required' => 'Bạn phải nhập số lượng',
             'so_luong.integer' => 'Số lượng phải là kiểu số',
             'gia_san_pham.required' => 'Bạn phải nhập giá sản phẩm',
