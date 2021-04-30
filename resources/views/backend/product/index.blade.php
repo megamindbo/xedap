@@ -13,7 +13,7 @@
                 <!-- /.card-header -->
                 <div class="card-body">
                     @include('messages.msg')
-                    <a name="" id="" class="btn btn-primary mb-2" href="{{ route('product.create') }}" role="button">Tạo sản phẩm mới</a>
+                    <a name="" id="" class="btn btn-primary mb-2" href="{{ route('admin.product.create') }}" role="button">Tạo sản phẩm mới</a>
                     <table id="tableProduct" class="table table-bordered">
                         <thead>
                         <tr>

@@ -16,10 +16,21 @@
                 <div class="col-md-2 col-sm-4 col-xs-3">
                     <ul class="menu-extra">
                         <li class="search search__open hidden-xs"><span class="ti-search"></span></li>
-                        <li><a href="login-register.html"><span class="ti-user"></span></a></li>
+                        @if(empty(Auth::check()) )
+                            <li><a href="{{route('login')}}"><i class="pe-7s-user"></i>Login</a></li>
+{{--                            <li><a href="{{route('register')}}"><span class="ti-user"></span></a></li>--}}
+                        @else
+                            <li><span class="ti-user"></span></li>
+                            <li>
+                                <a class="" href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                                    <i class="pe-7s-angle-right-circle"></i>Logout</a></li>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                            </form>
+                        @endif
                         <li class="cart__menu"><span class="ti-shopping-cart"></span></li>
-                        {{--                            <li class="toggle__menu hidden-xs hidden-sm"><span class="ti-menu"></span></li>--}}
-{{--                        <li class=""><span class="ti-menu"></span></li>--}}
                     </ul>
                 </div>
             </div>

@@ -33,14 +33,14 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item {{\Request::route()->getName()=='product.index'?'active':''}}">
-                            <a href="{{route('product.index')}}" class="nav-link">
+                        <li class="nav-item {{\Request::route()->getName()=='admin.product.index'?'active':''}}">
+                            <a href="{{route('admin.product.index')}}" class="nav-link">
                                 <i class="fas fa-biking"></i>
                                 <p>Sản phẩm</p>
                             </a>
                         </li>
-                        <li class="nav-item {{\Request::route()->getName()=='category.index'?'active':''}}">
-                            <a href="{{route('category.index')}}" class="nav-link">
+                        <li class="nav-item {{\Request::route()->getName()=='admin.category.index'?'active':''}}">
+                            <a href="{{route('admin.category.index')}}" class="nav-link">
                                 <i class="fas fa-arrows-alt"></i>
                                 <p>Thể loại sản phẩm</p>
                             </a>

@@ -16,7 +16,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form role="form" action ="{{ route('product.store') }}" method="POST" enctype="multipart/form-data">
+                <form role="form" action ="{{ route('admin.product.store') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
