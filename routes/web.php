@@ -12,12 +12,7 @@
 */
 
 Route::get('/','FrontEnd\IndexController@index')->name('indexsss');
-//Route::get('/admin','BackEnd\IndexController@dashboard')->name('backend');
-//Route::resource('product', 'BackEnd\ProductController');
-//Route::resource('category', 'BackEnd\CategoryController');
-//Route::group(['middleware' => ['web']], function () {
-//    Route::get('lang/{lang}','LangController@changeLang')->name('lang');
-//});
+Route::get('product/{id}','FrontEnd\ProductController@details')->name('product.details');
 
 Auth::routes();
 

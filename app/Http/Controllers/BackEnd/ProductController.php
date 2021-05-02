@@ -59,7 +59,7 @@ class ProductController extends Controller
             Product::create($dataProduct);
             ProductDetails::create($dataProductDetails);
             DB::commit();
-            return redirect()->route('product.index')->with('success', 'Tạo sản phẩm thành công');
+            return redirect()->route('admin.product.index')->with('success', 'Tạo sản phẩm thành công');
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::info($exception->getMessage());
@@ -77,7 +77,7 @@ class ProductController extends Controller
         try {
             $product = Product::find($id);
             $product->delete();
-            return redirect()->route('product.index')->with('success', 'Xóa sản phẩm thành công');
+            return redirect()->route('admin.product.index')->with('success', 'Xóa sản phẩm thành công');
         } catch (\Exception $exception) {
             Log::info($exception->getMessage());
         }
@@ -129,7 +129,7 @@ class ProductController extends Controller
             $product->update($dataProduct);
             ProductDetails::where('sku',$product->sku)->update($dataProductDetails);
             DB::commit();
-            return redirect()->route('product.index')->with('success', 'Cập nhật sản phẩm thành công');
+            return redirect()->route('admin.product.index')->with('success', 'Cập nhật sản phẩm thành công');
         } catch (\Exception $exception) {
             DB::rollBack();
             Log::info($exception->getMessage());

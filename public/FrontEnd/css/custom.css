@@ -7,5 +7,23 @@
 ---------------------------------------------------------------*/
 
 /* ----------------------------------------------------
-	You can put your custom css code here: 
+	You can put your custom css code here:
 -------------------------------------------------------*/
+.product__hight img {
+    transition: transform .5s, filter 1.5s ease-in-out;
+}
+.product__hight:hover img {
+    transform: scale(1.1) ;
+}
+
+#tablepress-33 td, #tablepress-33 th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#tablepress-33 th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #4CAF50;
+    color: white;
+}

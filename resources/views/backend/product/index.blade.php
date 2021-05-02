@@ -36,12 +36,12 @@
                                 <td>{{number_format($product->gia_san_pham, 0, '', ',')}} VNĐ</td>
                                 <td><img src="{{asset('img/frontend/product/all/'.$product->image)}}" alt="" style="width: 80px;height:80px;"></td>
                                 <td>
-                                    <a class="btn btn-info btn-sm" href="{{route('product.edit', $product->id)}}">
+                                    <a class="btn btn-info btn-sm" href="{{route('admin.product.edit', $product->id)}}">
                                         <i class="fas fa-pencil-alt">
                                         </i>
                                         Edit
                                     </a>
-                                    <form id="delete-form-{{$product->id}}" action="{{route('product.destroy',$product->id)}}" style="display:none" method="POST">
+                                    <form id="delete-form-{{$product->id}}" action="{{route('admin.product.destroy',$product->id)}}" style="display:none" method="POST">
                                         @csrf
                                         @method('DELETE')
                                     </form>
